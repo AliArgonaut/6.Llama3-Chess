@@ -65,10 +65,11 @@ function renderChessBoard(){
     }  
 }
 
+
 function main(){
     renderChessBoard(); 
     renderNumberColumn();      
-    renderLetterRow();  
+    renderLetterRow();
 }
 
 main(); 
