@@ -38,6 +38,16 @@ function renderNumberColumn(){
     }
 }
 
+function renderLetterRow(){
+    const letterBank = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+    for (let number = 0; number < 8; number++){
+        const letterTile = document.createElement('div');
+        letterTile.textContent = letterBank[number]; 
+        letterTile.classList.add('letterTile'); 
+        chessBoardLetters.appendChild(letterTile);  // Render letter tiles on the top row of the board
+    }
+}
+
 function renderChessBoard() {
     for (let row = 0; row < 8; row++){
         for (let col = 0; col < 8; col++){
@@ -49,6 +59,7 @@ function renderChessBoard() {
         }
     }
     renderNumberColumn();  // Render number tiles on the left side of the board
+    renderLetterRow()
 }
 
 renderChessBoard(); 
