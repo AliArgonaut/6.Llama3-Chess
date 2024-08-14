@@ -49,7 +49,7 @@ function renderLetterRow(){
         const letterTile = document.createElement('div');
         letterTile.textContent = letterBank[number]; 
         letterTile.classList.add('letterTile'); 
-        chessBoardLetters.appendChild(letterTile);  // Render letter tiles on the top row of the board
+        chessBoardLetters.appendChild(letterTile);      
     }
 }
 
