@@ -8,7 +8,7 @@ fetch("https://api.awanllm.com/v1/completions", {
   },
   body: JSON.stringify({
     "model": "Meta-Llama-3-8B-Instruct",
-    "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are an assistant AI.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nHello there!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
+    "prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nYou are an master of chess.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nHello there!<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n",
     "repetition_penalty": 1.1,
     "temperature": 0.7,
     "top_p": 0.9,
@@ -18,8 +18,8 @@ fetch("https://api.awanllm.com/v1/completions", {
   })
 }).then(response => response.json()).then(data => {
     const aiResponse = data.choices[0].text;
-}) */
-
+})
+ */
 
 const chessBoard = document.getElementById('chessBoard')
 
@@ -27,6 +27,15 @@ function createTile(color) {
     const tile = document.createElement('div')
     tile.classList.add('chessTile', color)
     chessBoard.appendChild(tile);    
+}
+
+function renderNumberColumn(){
+    for (let number = 8; number > 0; number--){
+        const numberTile = document.createElement('div');
+        numberTile.textContent = number; 
+        numberTile.classList.add('numberTile'); 
+        chessBoardNumbers.appendChild(numberTile); 
+    }
 }
 
 function renderChessBoard() {
@@ -39,6 +48,7 @@ function renderChessBoard() {
             }
         }
     }
+    renderNumberColumn();  // Render number tiles on the left side of the board
 }
 
 renderChessBoard(); 
