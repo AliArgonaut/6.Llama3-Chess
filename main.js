@@ -1,3 +1,8 @@
+//TODO:
+//get black and white pieces, put them on board
+
+
+
 /* const AWANLLM_API_KEY = '6547e190-4f09-46c8-9524-46a4aa3a57cd'	
 
 fetch("https://api.awanllm.com/v1/completions", {
@@ -48,8 +53,8 @@ function renderLetterRow(){
     }
 }
 
-function renderChessBoard() {
-    for (let row = 0; row < 8; row++){
+function renderChessBoard(){
+ for (let row = 0; row < 8; row++){
         for (let col = 0; col < 8; col++){
             if ((row + col) % 2 === 0) {
                 createTile('white')
@@ -57,9 +62,13 @@ function renderChessBoard() {
                 createTile('black')
             }
         }
-    }
-    renderNumberColumn();  // Render number tiles on the left side of the board
-    renderLetterRow()
+    }  
 }
 
-renderChessBoard(); 
+function main(){
+    renderChessBoard(); 
+    renderNumberColumn();      
+    renderLetterRow();  
+}
+
+main(); 
