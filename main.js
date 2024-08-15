@@ -80,11 +80,27 @@ function renderChessPiece(pieceID, pieceTile, color){
     })
 }
 
+
+
+
 function main(){
     renderChessBoard(); 
     renderNumberColumn();      
     renderLetterRow();
+
     renderChessPiece('./pieces/white/pawnWhite.png', ['.a2', '.b2', '.c2', '.d2', '.e2', '.f2', '.g2', '.h2'], 'whitePiece')
+    renderChessPiece('./pieces/white/rookWhite.png', ['.a1', '.h1'], 'whitePiece')
+    renderChessPiece('./pieces/white/knightWhite.png', ['.b1', '.g1'], 'whitePiece')
+    renderChessPiece('./pieces/white/bishopWhite.png', ['.c1', '.f1'], 'whitePiece')
+    renderChessPiece('./pieces/white/kingWhite.png', ['.d1'], 'whitePiece')
+    renderChessPiece('./pieces/white/queenWhite.png', ['.e1'], 'whitePiece')
+
+    renderChessPiece('./pieces/black/bishopBlack.png', ['.c8', '.f8'], 'blackPiece')
+    renderChessPiece('./pieces/black/knightBlack.png', ['.b8', '.g8'], 'blackPiece')
+    renderChessPiece('./pieces/black/rookBlack.png', ['.a8', '.h8'], 'blackPiece')
+    renderChessPiece('./pieces/black/kingBlack.png', ['.d8'], 'blackPiece')
+    renderChessPiece('./pieces/black/queenBlack.png', ['.e8'], 'blackPiece')
+    renderChessPiece('./pieces/black/pawnBlack.png', ['.a7', '.b7', '.c7', '.d7', '.e7', '.f7', '.g7', '.h7'], 'blackPiece')
 }
 
 main(); 
