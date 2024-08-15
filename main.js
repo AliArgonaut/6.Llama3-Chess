@@ -123,6 +123,7 @@ function main(){
                 if (selectedPiece != null) { 
                     e.target.appendChild(selectedPiece)
                     console.log('dropped is happening')
+                    selectedPiece = null; 
                 }
             })} 
         })
