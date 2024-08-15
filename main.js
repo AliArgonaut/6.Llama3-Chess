@@ -105,6 +105,30 @@ function main(){
 
 
 
+    let draggablePieces = document.querySelectorAll('.chessPiece')
+    let pieceTargetLocations = document.querySelectorAll('.chessTile') 
+    
+    for (piece of draggablePieces) {
+        piece.addEventListener('dragstart', function(e) {
+            let selectedPiece = e.target; 
+            console.log('dragging is happening')
+            for (tiles of pieceTargetLocations) {
+            tiles.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                console.log('dragover is happening')
+            })}
+            
+            for (tiles of pieceTargetLocations) {
+                tiles.addEventListener('drop', function(e) {
+                if (selectedPiece != null) { 
+                    e.target.appendChild(selectedPiece)
+                    console.log('dropped is happening')
+                }
+            })} 
+        })
+    }
 }
 
 main(); 
+
+
