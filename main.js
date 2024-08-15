@@ -67,11 +67,24 @@ function renderChessBoard(){
     }  
 }
 
+function renderChessPiece(pieceID, pieceTile, color){
+    pieceTile.forEach(square => {
+        let pieceObject = new Image(); 
+        pieceObject.src = pieceID;
+        pieceObject.classList.add('chessPiece', 'draggable', color);
+
+        let validSpawnSquare = document.querySelector(square)
+        if (validSpawnSquare) {
+        validSpawnSquare.appendChild(pieceObject);
+        }
+    })
+}
 
 function main(){
     renderChessBoard(); 
     renderNumberColumn();      
     renderLetterRow();
+    renderChessPiece('./pieces/white/pawnWhite.png', ['.a2', '.b2', '.c2', '.d2', '.e2', '.f2', '.g2', '.h2'], 'whitePiece')
 }
 
 main(); 
