@@ -72,6 +72,7 @@ function renderChessPiece(pieceID, pieceTile, color){
         let pieceObject = new Image(); 
         pieceObject.src = pieceID;
         pieceObject.classList.add('chessPiece', 'draggable', color);
+        pieceObject.draggable = true;
 
         let validSpawnSquare = document.querySelector(square)
         if (validSpawnSquare) {
@@ -82,8 +83,8 @@ function renderChessPiece(pieceID, pieceTile, color){
 
 
 
-
 function main(){
+
     renderChessBoard(); 
     renderNumberColumn();      
     renderLetterRow();
@@ -101,6 +102,9 @@ function main(){
     renderChessPiece('./pieces/black/kingBlack.png', ['.d8'], 'blackPiece')
     renderChessPiece('./pieces/black/queenBlack.png', ['.e8'], 'blackPiece')
     renderChessPiece('./pieces/black/pawnBlack.png', ['.a7', '.b7', '.c7', '.d7', '.e7', '.f7', '.g7', '.h7'], 'blackPiece')
+
+
+
 }
 
 main(); 
