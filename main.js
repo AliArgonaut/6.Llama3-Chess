@@ -67,11 +67,11 @@ function renderChessBoard(){
     }  
 }
 
-function renderChessPiece(pieceID, pieceTile, color){
+function renderChessPiece(pieceID, pieceTile, color, name){
     pieceTile.forEach(square => {
         let pieceObject = new Image(); 
         pieceObject.src = pieceID;
-        pieceObject.classList.add('chessPiece', 'draggable', color);
+        pieceObject.classList.add('chessPiece', 'draggable', color, name);
         pieceObject.draggable = true;
 
         let validSpawnSquare = document.querySelector(square)
@@ -89,19 +89,19 @@ function main(){
     renderNumberColumn();      
     renderLetterRow();
 
-    renderChessPiece('./pieces/white/pawnWhite.png', ['.a2', '.b2', '.c2', '.d2', '.e2', '.f2', '.g2', '.h2'], 'whitePiece')
-    renderChessPiece('./pieces/white/rookWhite.png', ['.a1', '.h1'], 'whitePiece')
-    renderChessPiece('./pieces/white/knightWhite.png', ['.b1', '.g1'], 'whitePiece')
-    renderChessPiece('./pieces/white/bishopWhite.png', ['.c1', '.f1'], 'whitePiece')
-    renderChessPiece('./pieces/white/kingWhite.png', ['.d1'], 'whitePiece')
-    renderChessPiece('./pieces/white/queenWhite.png', ['.e1'], 'whitePiece')
+    renderChessPiece('./pieces/white/pawnWhite.png', ['.a2', '.b2', '.c2', '.d2', '.e2', '.f2', '.g2', '.h2'], 'whitePiece', 'pawnW')
+    renderChessPiece('./pieces/white/rookWhite.png', ['.a1', '.h1'], 'whitePiece', 'rookW')
+    renderChessPiece('./pieces/white/knightWhite.png', ['.b1', '.g1'], 'whitePiece', 'knightW')
+    renderChessPiece('./pieces/white/bishopWhite.png', ['.c1', '.f1'], 'whitePiece', 'bishopW')
+    renderChessPiece('./pieces/white/kingWhite.png', ['.d1'], 'whitePiece', 'kingW')
+    renderChessPiece('./pieces/white/queenWhite.png', ['.e1'], 'whitePiece', 'queenW')
 
-    renderChessPiece('./pieces/black/bishopBlack.png', ['.c8', '.f8'], 'blackPiece')
-    renderChessPiece('./pieces/black/knightBlack.png', ['.b8', '.g8'], 'blackPiece')
-    renderChessPiece('./pieces/black/rookBlack.png', ['.a8', '.h8'], 'blackPiece')
-    renderChessPiece('./pieces/black/kingBlack.png', ['.d8'], 'blackPiece')
-    renderChessPiece('./pieces/black/queenBlack.png', ['.e8'], 'blackPiece')
-    renderChessPiece('./pieces/black/pawnBlack.png', ['.a7', '.b7', '.c7', '.d7', '.e7', '.f7', '.g7', '.h7'], 'blackPiece')
+    renderChessPiece('./pieces/black/bishopBlack.png', ['.c8', '.f8'], 'blackPiece', 'bishopB')
+    renderChessPiece('./pieces/black/knightBlack.png', ['.b8', '.g8'], 'blackPiece', 'knightB')
+    renderChessPiece('./pieces/black/rookBlack.png', ['.a8', '.h8'], 'blackPiece', 'rookB')
+    renderChessPiece('./pieces/black/kingBlack.png', ['.d8'], 'blackPiece', 'kingB')
+    renderChessPiece('./pieces/black/queenBlack.png', ['.e8'], 'blackPiece', 'queenB')
+    renderChessPiece('./pieces/black/pawnBlack.png', ['.a7', '.b7', '.c7', '.d7', '.e7', '.f7', '.g7', '.h7'], 'blackPiece', 'pawnB')
 
 
 
@@ -134,3 +134,10 @@ function main(){
 main(); 
 
 
+//make a turn counter inside the droppped event listener. this will not only block you from making moves, but it will be used to determined priority for piece taking. if your turn, you take. if not, they take. also use that same idea to create a variable that goes up each move (one for player one for computer). Use this to determine if pawns can move 1 or 2 spaces. when game is over, add up moves and print it
+
+//put the drag start event listener  inside an if statement that only fires if its your move
+
+//maybe try and clean up event listener block. its kind of disgusting. 
+//define legal moves and put them in a function that returns a boolean. if the boolean returns true then allow the drop part of the big event listener function to run
+//
