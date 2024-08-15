@@ -22,10 +22,12 @@ body {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
+    border: 2px solid black;
 }
 
 .chessTile {
     background: #101010;
+    border: 2px solid black;
 }
 .black{
 
@@ -33,7 +35,7 @@ body {
 }
 .white{
 
-    background: #53403d;
+    background: white;
 }
 
 
@@ -43,6 +45,7 @@ body {
     display: grid;
     grid-template-rows: repeat(8, 1fr);
     align-items: center;
+    background: black;
 }
 
 .numberTile {
@@ -64,6 +67,7 @@ body {
     grid-template-columns: repeat(8, 1fr);
     position: relative;
     transform: translate(-500px, 265px);
+    background-color: black;
 }
 
 .letterTile {
