@@ -28,9 +28,11 @@ fetch("https://api.awanllm.com/v1/completions", {
 
 const chessBoard = document.getElementById('chessBoard')
 
-function createTile(color) {
+function createTile(color, row, col) {
+    let lettersForNamingTiles = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']; 
+    let numsForNamingTiles = ['1', '2', '3', '4', '5', '6', '7', '8'].reverse();
     const tile = document.createElement('div')
-    tile.classList.add('chessTile', color)
+    tile.classList.add('chessTile', color, lettersForNamingTiles[col] + numsForNamingTiles[row]) 
     chessBoard.appendChild(tile);    
 }
 
@@ -57,9 +59,9 @@ function renderChessBoard(){
  for (let row = 0; row < 8; row++){
         for (let col = 0; col < 8; col++){
             if ((row + col) % 2 === 0) {
-                createTile('white')
+                createTile('white', row, col)
             } else {
-                createTile('black')
+                createTile('black', row, col)
             }
         }
     }  
